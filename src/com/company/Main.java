@@ -14,6 +14,13 @@ public class Main {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        System.out.println();
+        System.out.println("======================H2=========================");
+        try (Connection conn1 = DriverManager.getConnection("jdbc:h2:tcp://localhost/~/store", "sa", "")) {
+            print(conn1);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public static void print(Connection conn) throws SQLException {
